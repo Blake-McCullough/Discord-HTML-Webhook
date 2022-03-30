@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+    By Blake McCullough
+  </body>
+
+  <script>
+	
+    function sendMessage() {
+	var message = '{Message}';
+      const request = new XMLHttpRequest();
+      request.open("POST", "{WEBHOOK-URL}");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "EMBEDED-MESSAGES",
+        avatar_url: "https://www.lgss-digital.co.uk/app/uploads/2018/02/placeholder@512.jpg",
+        content: message
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
